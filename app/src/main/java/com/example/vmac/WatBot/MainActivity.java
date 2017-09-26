@@ -2,6 +2,7 @@ package com.example.vmac.WatBot;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
@@ -14,7 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -82,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     private String analytics_APIKEY;
     private SpeakerLabelsDiarization.RecoTokens recoTokens;
     private MicrophoneHelper microphoneHelper;
-
+    private Toolbar mToolBar;
 
 
     @Override
@@ -99,6 +103,15 @@ public class MainActivity extends AppCompatActivity {
         TTS_username = mContext.getString(R.string.TTS_username);
         TTS_password = mContext.getString(R.string.TTS_password);
         analytics_APIKEY = mContext.getString(R.string.mobileanalytics_apikey);
+
+        //mToolBar = (Toolbar) findViewById(R.id.nav_action);
+        //setSupportActionBar(mToolBar);
+
+        try {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        } catch (NullPointerException e) {
+            System.err.println("NULL found.");
+        }
 
 
         //Bluemix Mobile Analytics
@@ -474,8 +487,40 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.navigation_menu, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.nav_credits:
+                intent = new Intent(this, CreditsActivity.class);
+                this.startActivity(intent);
+                break;
+            case R.id.nav_info:
+                intent = new Intent(this, InfoActivity.class);
+                this.startActivity(intent);
+                break;
+            case R.id.nav_services:
+                intent = new Intent(this, ServicesActivity.class);
+                this.startActivity(intent);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
 
+        return true;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
+    }
 }
 
 

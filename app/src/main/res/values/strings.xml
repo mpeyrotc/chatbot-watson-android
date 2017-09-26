@@ -1,4 +1,12 @@
 <resources>
-    <string name="app_name">Watson Chabot</string>
-    <string name="what_s_on_your_mind">Enter your query</string>
+    <string name="what_s_on_your_mind">Dígame</string>
+    <string name="app_name">Primeros Auxilios</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="menu_header">Menú</string>
+    <string name="credits">Créditos</string>
+    <string name="info">Más información</string>
+    <string name="services">Más servicios</string>
+    <string name="input_text">Cuál es la emergencia?</string>
+    <string name="send_button">Enviar</string>
 </resources>
