@@ -10,8 +10,6 @@ import android.view.View;
  * Created by VMac on 06/01/17.
  */
 
-
-
 public class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
 
     private GestureDetector gestureDetector;

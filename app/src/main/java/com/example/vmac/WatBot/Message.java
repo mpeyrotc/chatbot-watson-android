@@ -16,8 +16,6 @@ public class Message implements Serializable {
     public Message(String id, String message, String createdAt) {
         this.id = id;
         this.message = message;
-
-
     }
 
     public String getId() {
