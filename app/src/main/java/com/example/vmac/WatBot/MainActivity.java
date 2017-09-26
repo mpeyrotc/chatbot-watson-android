@@ -194,9 +194,9 @@ public class MainActivity extends AppCompatActivity {
                             streamPlayer = new StreamPlayer();
                             if(audioMessage != null && !audioMessage.getMessage().isEmpty())
                                 //Change the Voice format and choose from the available choices
-                                streamPlayer.playStream(textToSpeech.synthesize(audioMessage.getMessage(), Voice.EN_LISA).execute());
+                                streamPlayer.playStream(textToSpeech.synthesize(audioMessage.getMessage(), Voice.ES_SOFIA).execute());
                             else
-                                streamPlayer.playStream(textToSpeech.synthesize("No Text Specified", Voice.EN_LISA).execute());
+                                streamPlayer.playStream(textToSpeech.synthesize("No se definió un texto", Voice.ES_SOFIA).execute());
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -228,6 +228,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     };
+
+    public void readResponse(final Message message) {
+        Thread thread = new Thread(new Runnable() {
+            public void run() {
+                Message audioMessage;
+                try {
+
+                    audioMessage = message;
+                    streamPlayer = new StreamPlayer();
+                    if(audioMessage != null && !audioMessage.getMessage().isEmpty())
+                        //Change the Voice format and choose from the available choices
+                        streamPlayer.playStream(textToSpeech.synthesize(audioMessage.getMessage(), Voice.ES_SOFIA).execute());
+                    else
+                        streamPlayer.playStream(textToSpeech.synthesize("No se definió un texto", Voice.ES_SOFIA).execute());
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+    }
 
     // Speech-to-Text Record Audio permission
     @Override
@@ -319,6 +341,8 @@ public class MainActivity extends AppCompatActivity {
                                 outMessage.setId("2");
                             }
                             messageArrayList.add(outMessage);
+
+                            readResponse(outMessage);
                         }
 
                         runOnUiThread(new Runnable() {
@@ -406,7 +430,7 @@ public class MainActivity extends AppCompatActivity {
         return new RecognizeOptions.Builder()
                 .continuous(true)
                 .contentType(ContentType.OPUS.toString())
-                //.model("en-UK_NarrowbandModel")
+                .model("es-ES_NarrowbandModel")
                 .interimResults(true)
                 .inactivityTimeout(2000)
                 //TODO: Uncomment this to enable Speaker Diarization
