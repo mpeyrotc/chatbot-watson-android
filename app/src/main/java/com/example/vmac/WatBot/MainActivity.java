@@ -56,7 +56,7 @@ import static com.ibm.watson.developer_cloud.android.library.audio.MicrophoneHel
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private volatile boolean isPlaying = false;
     private RecyclerView recyclerView;
     private ChatAdapter mAdapter;
     private ArrayList messageArrayList;
@@ -187,6 +187,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view, final int position) {
                 Thread thread = new Thread(new Runnable() {
                     public void run() {
+                        if(isPlaying) {
+                            return;
+                        } else {
+                            isPlaying = true;
+                        }
                         Message audioMessage;
                         try {
 
@@ -200,8 +205,12 @@ public class MainActivity extends AppCompatActivity {
 
                         } catch (Exception e) {
                             e.printStackTrace();
+                        } finally {
+                            isPlaying = false;
                         }
                     }
+
+
                 });
                 thread.start();
             }
@@ -232,6 +241,11 @@ public class MainActivity extends AppCompatActivity {
     public void readResponse(final Message message) {
         Thread thread = new Thread(new Runnable() {
             public void run() {
+                if(isPlaying) {
+                    return;
+                } else {
+                    isPlaying = true;
+                }
                 Message audioMessage;
                 try {
 
@@ -245,6 +259,8 @@ public class MainActivity extends AppCompatActivity {
 
                 } catch (Exception e) {
                     e.printStackTrace();
+                } finally {
+                    isPlaying = false;
                 }
             }
         });
