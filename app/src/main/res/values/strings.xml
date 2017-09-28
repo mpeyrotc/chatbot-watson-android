@@ -33,4 +33,7 @@
     <string name="disclaimer">No nos hacemos responsables por daños personales
     o hacia un tercero por el uso de esta aplicación. Les recordamos que se trata de una
     herramienta desarrollada como propuesta para una futura aplicación más profesional.</string>
+    <string name="contacto">Contacto</string>
+    <string name="correo">macpeyrot@hotmail.com</string>
+    <string name="peyrot_contacto">Si requiere de mayor información, por favor contacte a Marco A. Peyrot.</string>
 </resources>

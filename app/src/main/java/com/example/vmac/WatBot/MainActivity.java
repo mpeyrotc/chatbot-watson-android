@@ -1,12 +1,14 @@
 package com.example.vmac.WatBot;
 
 import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -22,6 +24,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ibm.mobilefirstplatform.clientsdk.android.analytics.api.Analytics;
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText inputMessage;
     private ImageButton btnSend;
     private ImageButton btnRecord;
-    private Map<String,Object> context = new HashMap<>();
+    private Map<String, Object> context = new HashMap<>();
     StreamPlayer streamPlayer;
     private boolean initialRequest;
     private boolean permissionToRecordAccepted = false;
@@ -103,9 +106,6 @@ public class MainActivity extends AppCompatActivity {
         TTS_username = mContext.getString(R.string.TTS_username);
         TTS_password = mContext.getString(R.string.TTS_password);
         analytics_APIKEY = mContext.getString(R.string.mobileanalytics_apikey);
-
-        //mToolBar = (Toolbar) findViewById(R.id.nav_action);
-        //setSupportActionBar(mToolBar);
 
         try {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -22,7 +22,19 @@ import java.util.Map;
 public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private int SELF = 100;
     private ArrayList<Message> messageArrayList;
-    private Map<String, Integer> images = new HashMap<>();
+    private Map<String, Integer> images;
+
+    {
+        images = new HashMap<>();
+        images.put("Ponga sus brazos alrededor de la cintura de la persona que se está asfixiando. Inclínelo un poco hacia delante de su cintura. Haga un puño con una de sus manos. Coloque el lado del dedo pulgar de su puño entre el ombligo de la persona y la parte más baja de sus costillas. No coloque su puño sobre las costillas. Coloque la otra mano sobre su puño. Presione su puño contra el abdomen de la persona con una compresión rápida hacia adentro y hacia arriba. Repita las compresiones hasta que el objeto salga. Si la persona vomita, acuéstelo de lado para evitar que el objeto obstruya totalmente sus vías respiratorias.",
+                R.drawable.imagen_1);
+        images.put("Se está atragantando con algo? Si no, realiza respiración boca a boca 12 veces cada minuto hasta que pueda respirar por su cuenta. Sigue alerta de ella.",
+                R.drawable.imagen_2);
+        images.put("Se está atragantando con algo? Si no, realiza respiración boca a boca 20 veces por minuto hasta que pueda respirar por su cuenta y sigue alerta de ella.",
+                R.drawable.imagen_2);
+        images.put("Realiza ciclos de 30 segundos donde hagas 30 compresiones torácicas y 2 insuflaciones",
+                R.drawable.imagen_3);
+    }
 
 
     public ChatAdapter(ArrayList<Message> messageArrayList) {
