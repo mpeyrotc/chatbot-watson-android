@@ -9,4 +9,12 @@
     <string name="services">Más servicios</string>
     <string name="input_text">Cuál es la emergencia?</string>
     <string name="send_button">Enviar</string>
+    <string name="servicio_1">Número general</string>
+    <string name="numero_1">911</string>
+    <string name="servicio_2">Policía</string>
+    <string name="numero_2">060</string>
+    <string name="servicio_3">Bomberos</string>
+    <string name="numero_3">068</string>
+    <string name="servicio_4">Cruz Roja</string>
+    <string name="numero_4">065</string>
 </resources>
