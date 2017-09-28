@@ -7,8 +7,7 @@ package com.example.vmac.WatBot;
 import java.io.Serializable;
 
 public class Message implements Serializable {
-    String id, message;
-
+    String id, message, image_id = null;
 
     public Message() {
     }
@@ -34,6 +33,12 @@ public class Message implements Serializable {
         this.message = message;
     }
 
+    public String getImage() {
+        return image_id;
+    }
 
+    public void setImage(String id) {
+        image_id = id;
+    }
 }
 
