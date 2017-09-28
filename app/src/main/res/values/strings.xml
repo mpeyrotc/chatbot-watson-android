@@ -17,4 +17,20 @@
     <string name="numero_3">068</string>
     <string name="servicio_4">Cruz Roja</string>
     <string name="numero_4">065</string>
+    <string name="credits_title">Desarrolladores</string>
+    <string name="delgadillo">David Delgadillo</string>
+    <string name="mat_delgadillo">(A01195995)</string>
+    <string name="peyrot">Marco A. Peyrot</string>
+    <string name="mat_peyrot">(A00815262)</string>
+    <string name="rojo">Luis Alfonso Rojo</string>
+    <string name="mat_rojo">(A01113049)</string>
+    <string name="marquis">Juliette Marquis</string>
+    <string name="mat_marquis">(A01675192)</string>
+    <string name="adicional">Créditos Adicionales</string>
+    <string name="gracias">Esta aplicación está basada en la aplicación
+    desarrollada por VidyasagarMSC en GitHub.</string>
+    <string name="advertencia">Advertencia</string>
+    <string name="disclaimer">No nos hacemos responsables por daños personales
+    o hacia un tercero por el uso de esta aplicación. Les recordamos que se trata de una
+    herramienta desarrollada como propuesta para una futura aplicación más profesional.</string>
 </resources>
