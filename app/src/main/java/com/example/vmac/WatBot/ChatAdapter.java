@@ -6,14 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Created by VMac on 17/11/16.
- * Modified by mpeyrotc on 28/09/17.
- *
+ * Modified by mpeyrotc on 9/28/17.
+ * <p>
  * The ChatAdapter extends a {@code RecycleView} and acts as a holder for the
  * message boxes generated between Watson and the user. It has a message size limit
  * of 100 and holds the mappings for showing helpful images to the user if requested.
@@ -112,7 +113,7 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
          * The ViewHolder method checks each {@code View} object that represents a message.
          * If the message matches a given key, the corresponding image that accompanies
          * such text is appended in an {@code ImageView} object.
-         *
+         * <p>
          * It is worth noting that the match could be made to either a Watson response
          * or a user's query.
          *

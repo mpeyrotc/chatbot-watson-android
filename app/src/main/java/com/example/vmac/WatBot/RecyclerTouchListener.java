@@ -8,8 +8,13 @@ import android.view.View;
 
 /**
  * Created by VMac on 06/01/17.
+ * <p>
+ * This class permits the user to scroll up and down through the conversation
+ * to visualize the messages sent back and forth between him and Watson.
+ *
+ * @author VMac
+ * @version 1.0
  */
-
 public class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
 
     private GestureDetector gestureDetector;
